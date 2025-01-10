@@ -1,0 +1,15 @@
+<div class="p-4">
+    <h1 class="text-2xl font-bold mb-4">Posts</h1>
+    <ul class="space-y-4">
+      <li
+        *ngFor="let post of posts"
+        class="p-4 border rounded shadow-md bg-white hover:shadow-lg"
+      >
+        <h2 class="text-lg font-semibold">{{ post.title }}</h2>
+        <p class="text-sm text-gray-600">
+          {{ post.body }}
+        </p>
+      </li>
+    </ul>
+  </div>
+  

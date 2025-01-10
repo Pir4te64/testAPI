@@ -1,0 +1,27 @@
+<div class="p-4">
+    <h1 class="text-2xl font-bold mb-4">Comentarios</h1>
+    <ul class="space-y-4">
+      <li
+        *ngFor="let comment of comments"
+        class="p-4 border rounded shadow-md bg-white hover:shadow-lg"
+      >
+        <!-- Nombre del autor -->
+        <h2 class="text-lg font-semibold">{{ comment.name }}</h2>
+        <!-- Email del autor -->
+        <p class="text-sm text-gray-600">
+          <strong>Email:</strong> 
+          <a
+            href="mailto:{{ comment.email }}"
+            class="text-blue-500 hover:underline"
+          >
+            {{ comment.email }}
+          </a>
+        </p>
+        <!-- Cuerpo del comentario -->
+        <p class="text-sm text-gray-700 mt-2">
+          {{ comment.body }}
+        </p>
+      </li>
+    </ul>
+  </div>
+  

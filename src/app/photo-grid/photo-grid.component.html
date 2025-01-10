@@ -1,0 +1,40 @@
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 p-4">
+  <div
+    *ngFor="let photo of photos; let i = index"
+    class="border rounded overflow-hidden shadow-md hover:shadow-lg relative"
+  >
+    <!-- Spinner mientras la imagen está cargando -->
+    <div
+      *ngIf="loadingStates[i]"
+      class="absolute inset-0 flex items-center justify-center bg-gray-100"
+    >
+      <div class="w-6 h-6 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+    </div>
+
+    <!-- Imagen -->
+    <img
+      [src]="photo.thumbnailUrl"
+      [alt]="photo.title"
+      class="w-full h-auto"
+      (load)="onImageLoad(i)"
+      (error)="onImageError(i)"
+      [class.hidden]="loadingStates[i]" 
+    />
+
+    <!-- Texto -->
+    <div class="p-2 text-center">
+      <p class="text-sm text-gray-700 font-semibold">
+        {{ photo.title || 'Foto no disponible' }}
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="flex justify-center mt-4">
+  <button
+    class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700"
+    (click)="loadMorePhotos()"
+  >
+    Cargar 10 fotos más
+  </button>
+</div>

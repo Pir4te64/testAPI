@@ -1,0 +1,17 @@
+<div class="p-4">
+    <h1 class="text-2xl font-bold mb-4">Álbumes</h1>
+    <ul class="space-y-4">
+      <li
+        *ngFor="let album of albums"
+        class="p-4 border rounded shadow-md bg-white hover:shadow-lg"
+      >
+        <!-- Título del álbum -->
+        <h2 class="text-lg font-semibold">{{ album.title }}</h2>
+        <!-- ID del usuario -->
+        <p class="text-sm text-gray-600">
+          <strong>Usuario ID:</strong> {{ album.userId }}
+        </p>
+      </li>
+    </ul>
+  </div>
+  
