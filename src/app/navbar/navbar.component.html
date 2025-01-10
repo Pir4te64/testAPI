@@ -1,34 +1,55 @@
 <nav class="bg-gray-800 text-white py-4 px-6 shadow-lg">
   <div class="flex justify-between items-center">
     <!-- Logo -->
-    <a href="/" class="text-lg font-bold text-yellow-400 hover:text-yellow-300">
-      TestAPI
+    <a href="/" class="flex items-center">
+      <img src="/json.svg" alt="JSON Logo" class="w-8 h-8 mr-2" />
+      <span class="text-lg font-bold text-yellow-400 hover:text-yellow-300">
+        JSON - TESTING
+      </span>
     </a>
+
+    <!-- Botón hamburguesa (para pantallas pequeñas) -->
+    <button
+      class="lg:hidden text-yellow-400 hover:text-yellow-300"
+      (click)="toggleMenu()"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="2"
+        stroke="currentColor"
+        class="w-6 h-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M4 6h16M4 12h16m-7 6h7"
+        />
+      </svg>
+    </button>
+
     <!-- Links -->
-    <ul class="flex space-x-6">
+    <ul
+      [class.hidden]="!menuOpen"
+      class="lg:flex space-y-4 lg:space-y-0 lg:space-x-6 absolute lg:static bg-gray-800 lg:bg-transparent top-16 left-0 w-full lg:w-auto p-4 lg:p-0 z-50"
+    >
       <li>
         <a
           routerLink="/"
           routerLinkActive="border-b-2 border-yellow-400"
-          class="hover:text-yellow-300"
+          class="block hover:text-yellow-300"
+          (click)="closeMenu()"
         >
           Inicio
         </a>
       </li>
       <li>
         <a
-          routerLink="/usuarios"
-          routerLinkActive="border-b-2 border-yellow-400"
-          class="hover:text-yellow-300"
-        >
-          Usuarios
-        </a>
-      </li>
-      <li>
-        <a
           routerLink="/posts"
           routerLinkActive="border-b-2 border-yellow-400"
-          class="hover:text-yellow-300"
+          class="block hover:text-yellow-300"
+          (click)="closeMenu()"
         >
           Posts
         </a>
@@ -37,7 +58,8 @@
         <a
           routerLink="/comments"
           routerLinkActive="border-b-2 border-yellow-400"
-          class="hover:text-yellow-300"
+          class="block hover:text-yellow-300"
+          (click)="closeMenu()"
         >
           Comentarios
         </a>
@@ -46,7 +68,8 @@
         <a
           routerLink="/albums"
           routerLinkActive="border-b-2 border-yellow-400"
-          class="hover:text-yellow-300"
+          class="block hover:text-yellow-300"
+          (click)="closeMenu()"
         >
           Álbumes
         </a>
@@ -55,7 +78,8 @@
         <a
           routerLink="/photos"
           routerLinkActive="border-b-2 border-yellow-400"
-          class="hover:text-yellow-300"
+          class="block hover:text-yellow-300"
+          (click)="closeMenu()"
         >
           Fotos
         </a>
@@ -64,9 +88,20 @@
         <a
           routerLink="/todos"
           routerLinkActive="border-b-2 border-yellow-400"
-          class="hover:text-yellow-300"
+          class="block hover:text-yellow-300"
+          (click)="closeMenu()"
         >
           Tareas
+        </a>
+      </li>
+      <li>
+        <a
+          routerLink="/usuarios"
+          routerLinkActive="border-b-2 border-yellow-400"
+          class="block hover:text-yellow-300"
+          (click)="closeMenu()"
+        >
+          Usuarios
         </a>
       </li>
     </ul>

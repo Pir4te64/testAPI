@@ -41,4 +41,9 @@ export class PhotoGridComponent implements OnInit{
     this.loadingStates[index] = false;
     this.photos[index].thumbnailUrl = "";
   }
+  copyToClipboard(url: string): void {
+    navigator.clipboard.writeText(url).then(() => {
+      alert('¡Enlace copiado al portapapeles!');
+    });
+  }
 }

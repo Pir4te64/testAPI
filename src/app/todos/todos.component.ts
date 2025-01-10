@@ -19,4 +19,9 @@ export class TodosComponent implements OnInit {
       this.todos = data.slice(0, 10); // Mostrar solo los primeros 10 todos
     });
   }
+  copyToClipboard(url: string): void {
+    navigator.clipboard.writeText(url).then(() => {
+      alert('¡Enlace copiado al portapapeles!');
+    });
+  }
 }

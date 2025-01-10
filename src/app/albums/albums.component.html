@@ -1,17 +1,54 @@
-<div class="p-4">
-    <h1 class="text-2xl font-bold mb-4">Álbumes</h1>
-    <ul class="space-y-4">
-      <li
-        *ngFor="let album of albums"
-        class="p-4 border rounded shadow-md bg-white hover:shadow-lg"
-      >
-        <!-- Título del álbum -->
-        <h2 class="text-lg font-semibold">{{ album.title }}</h2>
-        <!-- ID del usuario -->
-        <p class="text-sm text-gray-600">
-          <strong>Usuario ID:</strong> {{ album.userId }}
-        </p>
-      </li>
-    </ul>
-  </div>
+<div class="p-6 bg-gray-100 min-h-screen">
+  <div class="flex justify-between items-center mb-6">
+    <!-- Título -->
+    <h1 class="text-3xl font-extrabold text-gray-800 border-b-4 border-green-500 pb-2">
+      Álbumes
+    </h1>
+    <!-- Botón para copiar enlace -->
+    <button
+    (click)="copyToClipboard('https://jsonplaceholder.typicode.com/albums')"
+    class="bg-green-500 text-white p-2 rounded hover:bg-green-600 transition-colors duration-200 flex items-center justify-center"
+  >
+    <img
+      src="/copy.svg"
+      alt="Copiar enlace"
+      class="w-6 h-6"
+    />
+  </button>
   
+  </div>
+
+  <!-- Lista de álbumes -->
+  <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <li
+      *ngFor="let album of albums"
+      class="p-6 bg-white border border-gray-300 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+    >
+      <!-- Ícono o imagen representativa -->
+      <div class="flex items-center justify-center bg-green-100 rounded-full w-16 h-16 mb-4 mx-auto">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-8 h-8 text-green-500"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M9 12l2 2 4-4M7.5 15.75L4.5 18.75m0 0h6M3 3h18a2 2 0 012 2v14a2 2 0 01-2 2H3a2 2 0 01-2-2V5a2 2 0 012-2z"
+          />
+        </svg>
+      </div>
+      <!-- Título del álbum -->
+      <h2 class="text-lg font-bold text-gray-800 text-center mb-2">
+        {{ album.title }}
+      </h2>
+      <!-- ID del usuario -->
+      <p class="text-sm text-gray-600 text-center">
+        <strong>Usuario ID:</strong> {{ album.userId }}
+      </p>
+    </li>
+  </ul>
+</div>

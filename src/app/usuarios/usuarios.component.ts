@@ -21,4 +21,9 @@ export class UsuariosComponent {
     // Si el usuario ya está expandido, colapsa; si no, expande
     this.expandedUserId = this.expandedUserId === userId ? null : userId;
   }
+  copyToClipboard(url: string): void {
+    navigator.clipboard.writeText(url).then(() => {
+      alert('¡Enlace copiado al portapapeles!');
+    });
+  }
 }

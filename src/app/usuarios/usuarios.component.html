@@ -1,32 +1,53 @@
-<div class="p-4">
-  <h1 class="text-2xl font-bold mb-4">Usuarios</h1>
-  <ul class="space-y-4">
+<div class="p-6 bg-gray-100 min-h-screen">
+  <div class="flex justify-between items-center mb-6">
+    <!-- Título -->
+    <h1 class="text-3xl font-extrabold text-gray-800 border-b-4 border-indigo-500 pb-2">
+      Usuarios
+    </h1>
+    <!-- Botón para copiar enlace -->
+    <button
+  (click)="copyToClipboard('https://jsonplaceholder.typicode.com/users')"
+  class="bg-indigo-500 text-white p-2 rounded hover:bg-indigo-600 transition-colors duration-200 flex items-center justify-center"
+>
+  <img
+    src="/copy.svg"
+    alt="Copiar enlace"
+    class="w-6 h-6"
+  />
+</button>
+
+  </div>
+
+  <!-- Lista de usuarios -->
+  <ul class="space-y-6">
     <li
       *ngFor="let user of users"
-      class="p-4 border rounded shadow-md bg-white hover:shadow-lg"
+      class="p-6 bg-white border border-gray-300 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
     >
       <!-- Información básica -->
-      <h2 class="text-lg font-semibold">{{ user.name }}</h2>
-      <p class="text-sm text-gray-600">
-        <strong>Email:</strong> {{ user.email }}
-      </p>
-      <p class="text-sm text-gray-600">
-        <strong>Teléfono:</strong> {{ user.phone }}
-      </p>
-      <p class="text-sm text-gray-600">
-        <strong>Empresa:</strong> {{ user.company.name }}
-      </p>
+      <div class="mb-4">
+        <h2 class="text-xl font-bold text-gray-800 mb-2">{{ user.name }}</h2>
+        <p class="text-sm text-gray-600">
+          <strong>Email:</strong> {{ user.email }}
+        </p>
+        <p class="text-sm text-gray-600">
+          <strong>Teléfono:</strong> {{ user.phone }}
+        </p>
+        <p class="text-sm text-gray-600">
+          <strong>Empresa:</strong> {{ user.company.name }}
+        </p>
+      </div>
 
       <!-- Botón para mostrar/ocultar información -->
       <button
-        class="bg-blue-500 text-white py-1 px-3 mt-2 rounded hover:bg-blue-700"
+        class="bg-indigo-500 text-white text-sm py-1 px-3 rounded hover:bg-indigo-600"
         (click)="toggleInfo(user.id)"
       >
         {{ expandedUserId === user.id ? '- Ocultar' : '+ Info' }}
       </button>
 
       <!-- Información adicional -->
-      <div *ngIf="expandedUserId === user.id" class="mt-4">
+      <div *ngIf="expandedUserId === user.id" class="mt-4 bg-gray-50 p-4 rounded border border-gray-200">
         <p class="text-sm text-gray-600">
           <strong>Usuario:</strong> {{ user.username }}
         </p>
@@ -37,7 +58,7 @@
         </p>
         <p class="text-sm text-gray-600">
           <strong>Sitio web:</strong> 
-          <a href="http://{{ user.website }}" target="_blank" class="text-blue-500 hover:underline">
+          <a href="http://{{ user.website }}" target="_blank" class="text-indigo-500 hover:underline">
             {{ user.website }}
           </a>
         </p>

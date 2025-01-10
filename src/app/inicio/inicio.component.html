@@ -1,54 +1,63 @@
-<div class="p-6">
-    <h1 class="text-2xl font-bold mb-6">Bienvenido a la API Test</h1>
-    <ul class="space-y-4">
-      <li>
-        <a
-          routerLink="/posts"
-          class="text-blue-500 hover:underline"
-        >
-          /posts
-        </a> - 100 posts
-      </li>
-      <li>
-        <a
-          routerLink="/comments"
-          class="text-blue-500 hover:underline"
-        >
-          /comments
-        </a> - 500 comments
-      </li>
-      <li>
-        <a
-          routerLink="/albums"
-          class="text-blue-500 hover:underline"
-        >
-          /albums
-        </a> - 100 albums
-      </li>
-      <li>
-        <a
-          routerLink="/photos"
-          class="text-blue-500 hover:underline"
-        >
-          /photos
-        </a> - 5000 photos
-      </li>
-      <li>
-        <a
-          routerLink="/todos"
-          class="text-blue-500 hover:underline"
-        >
-          /todos
-        </a> - 200 todos
-      </li>
-      <li>
-        <a
-          routerLink="/usuarios"
-          class="text-blue-500 hover:underline"
-        >
-          /users
-        </a> - 10 users
-      </li>
-    </ul>
+<div class="p-6 bg-gray-100 min-h-screen flex flex-col justify-center items-center">
+  <!-- Título -->
+  <h1 class="text-4xl font-extrabold text-gray-800 mb-8 text-center">
+    JSON TEST API
+  </h1>
+
+  <!-- Lista de enlaces -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-4xl">
+    <!-- Enlace a posts -->
+    <a
+      routerLink="/posts"
+      class="bg-blue-500 text-white py-4 px-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 flex items-center justify-between"
+    >
+      <span class="text-lg font-bold">/posts</span>
+      <span class="text-sm font-medium text-gray-100">100 posts</span>
+    </a>
+
+    <!-- Enlace a comments -->
+    <a
+      routerLink="/comments"
+      class="bg-green-500 text-white py-4 px-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 flex items-center justify-between"
+    >
+      <span class="text-lg font-bold">/comments</span>
+      <span class="text-sm font-medium text-gray-100">500 comments</span>
+    </a>
+
+    <!-- Enlace a albums -->
+    <a
+      routerLink="/albums"
+      class="bg-purple-500 text-white py-4 px-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 flex items-center justify-between"
+    >
+      <span class="text-lg font-bold">/albums</span>
+      <span class="text-sm font-medium text-gray-100">100 albums</span>
+    </a>
+
+    <!-- Enlace a photos -->
+    <a
+      routerLink="/photos"
+      class="bg-orange-500 text-white py-4 px-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 flex items-center justify-between"
+    >
+      <span class="text-lg font-bold">/photos</span>
+      <span class="text-sm font-medium text-gray-100">5000 photos</span>
+    </a>
+
+    <!-- Enlace a todos -->
+    <a
+      routerLink="/todos"
+      class="bg-teal-500 text-white py-4 px-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 flex items-center justify-between"
+    >
+      <span class="text-lg font-bold">/todos</span>
+      <span class="text-sm font-medium text-gray-100">200 todos</span>
+    </a>
+
+    <!-- Enlace a usuarios -->
+    <a
+      routerLink="/usuarios"
+      class="bg-indigo-500 text-white py-4 px-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 flex items-center justify-between"
+    >
+      <span class="text-lg font-bold">/users</span>
+      <span class="text-sm font-medium text-gray-100">10 users</span>
+    </a>
   </div>
-  
+</div>

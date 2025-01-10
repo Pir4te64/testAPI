@@ -1,27 +1,45 @@
-<div class="p-4">
-    <h1 class="text-2xl font-bold mb-4">Comentarios</h1>
-    <ul class="space-y-4">
-      <li
-        *ngFor="let comment of comments"
-        class="p-4 border rounded shadow-md bg-white hover:shadow-lg"
-      >
-        <!-- Nombre del autor -->
-        <h2 class="text-lg font-semibold">{{ comment.name }}</h2>
-        <!-- Email del autor -->
-        <p class="text-sm text-gray-600">
-          <strong>Email:</strong> 
-          <a
-            href="mailto:{{ comment.email }}"
-            class="text-blue-500 hover:underline"
-          >
-            {{ comment.email }}
-          </a>
-        </p>
-        <!-- Cuerpo del comentario -->
-        <p class="text-sm text-gray-700 mt-2">
-          {{ comment.body }}
-        </p>
-      </li>
-    </ul>
-  </div>
+<div class="p-6 bg-gray-100 min-h-screen">
+  <div class="flex justify-between items-center mb-6">
+    <!-- Título -->
+    <h1 class="text-3xl font-extrabold text-gray-800 border-b-4 border-blue-500 pb-2">
+      Comentarios
+    </h1>
+    <!-- Botón para copiar enlace -->
+    <button
+    (click)="copyToClipboard('https://jsonplaceholder.typicode.com/comments')"
+    class="bg-green-500 text-white p-2 rounded hover:bg-green-600 transition-colors duration-200 flex items-center justify-center"
+  >
+    <img
+      src="/copy.svg"
+      alt="Copiar enlace"
+      class="w-6 h-6"
+    />
+  </button>
   
+  </div>
+
+  <!-- Lista de comentarios -->
+  <ul class="space-y-6">
+    <li
+      *ngFor="let comment of comments"
+      class="p-6 bg-white border border-gray-300 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+    >
+      <!-- Encabezado del comentario -->
+      <h2 class="text-lg font-bold text-gray-800 mb-2">{{ comment.name }}</h2>
+      <!-- Email del autor -->
+      <p class="text-sm text-gray-600">
+        <strong>Email:</strong>
+        <a
+          href="mailto:{{ comment.email }}"
+          class="text-blue-500 hover:underline"
+        >
+          {{ comment.email }}
+        </a>
+      </p>
+      <!-- Contenido del comentario -->
+      <p class="text-sm text-gray-700 mt-2">
+        {{ comment.body }}
+      </p>
+    </li>
+  </ul>
+</div>
