@@ -4,21 +4,21 @@
       Publicaciones
     </h1>
     <button
-    (click)="copyToClipboard('https://jsonplaceholder.typicode.com/posts')"
-    class="bg-blue-500 text-white p-2 rounded hover:bg-blue-600 transition-colors duration-200 flex items-center justify-center"
-  >
-    <img
-      src="/copy.svg"
-      alt="Copiar enlace"
-      class="w-6 h-6"
-    />
-  </button>
-  
+      (click)="copyToClipboard('https://jsonplaceholder.typicode.com/posts')"
+      class="bg-blue-500 text-white p-2 rounded hover:bg-blue-600 transition-colors duration-200 flex items-center justify-center"
+    >
+      <img
+        src="/copy.svg"
+        alt="Copiar enlace"
+        class="w-6 h-6"
+      />
+    </button>
   </div>
   <ul class="space-y-6">
     <li
       *ngFor="let post of posts"
-      class="p-6 bg-white border border-gray-300 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+      class="p-6 bg-white border border-gray-300 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer"
+      (click)="navigateToPost(post.id)"
     >
       <!-- Encabezado del post -->
       <div class="flex items-center mb-4">

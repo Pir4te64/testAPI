@@ -6,6 +6,7 @@ import { PostsComponent } from './posts/posts.component';
 import { AlbumsComponent } from './albums/albums.component';
 import { TodosComponent } from './todos/todos.component';
 import { CommentsComponent } from './comments/comments.component';
+import { PostDetailComponent } from './post-detail-component/post-detail-component.component';
 
 export const routes: Routes = [
   { path: '', component: InicioComponent }, // Página de inicio
@@ -15,5 +16,5 @@ export const routes: Routes = [
   { path: 'albums', component: AlbumsComponent }, // Ruta para álbumes,
   { path: 'todos', component: TodosComponent },
   { path: 'comments', component: CommentsComponent },
-  
+  { path: 'post/:id', component: PostDetailComponent },
 ];

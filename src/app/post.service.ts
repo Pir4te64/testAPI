@@ -14,4 +14,8 @@ export class PostService {
   getPosts(): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrl);
   }
+  getPostById(id: string | null): Observable<any> {
+    return this.http.get<any>(`https://jsonplaceholder.typicode.com/posts/${id}`);
+  }
+  
 }

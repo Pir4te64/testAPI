@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../post.service';
 import { CommonModule } from '@angular/common';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-posts',
   standalone: true,
@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
 export class PostsComponent implements OnInit {
   posts: any[] = []; // Array para almacenar los posts
 
-  constructor(private postService: PostService) {}
+  constructor(private postService: PostService, private router: Router) {}
 
   ngOnInit(): void {
     // Consultar los posts al iniciar el componente
@@ -24,5 +24,8 @@ export class PostsComponent implements OnInit {
     navigator.clipboard.writeText(url).then(() => {
       alert('¡Enlace copiado al portapapeles!');
     });
+  }
+  navigateToPost(id: number): void {
+    this.router.navigate([`/post/${id}`]);
   }
 }
